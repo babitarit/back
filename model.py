@@ -88,9 +88,12 @@ from fpdf import FPDF
 import google.generativeai as genai
 import configparser
 
-config = configparser.ConfigParser()
-config.read('C:/Users/SAKSHI/Desktop/1 - Copy/pokie/Backend/secret.properties')
-API_KEY = config.get('DEFAULT', 'API_KEY')
+# config = configparser.ConfigParser()
+# config.read('C:/Users/SAKSHI/Desktop/1 - Copy/pokie/Backend/secret.properties')
+# API_KEY = config.get('DEFAULT', 'API_KEY')
+
+import os
+API_KEY = os.getenv('API_KEY')
 
 genai.configure(api_key=API_KEY)
 
